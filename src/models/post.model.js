@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
-    imageUrl: { 
+    image: { 
         type: String, 
         required: true
     },
@@ -17,3 +17,5 @@ const postSchema = new mongoose.Schema({
 })
 
 const postModel = mongoose.model("post", postSchema);
+
+module.exports = postModel
