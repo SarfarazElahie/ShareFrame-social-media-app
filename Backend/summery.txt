@@ -291,3 +291,37 @@ Line 9-15: uploadFile(buffer, name) Function
 │    createdAt: Date                                           │
 │  }                                                           │
 └──────────────────────────────────────────────────────────────┘
+
+⚡ 4. RULES FOR FUTURE UPGRADES (VERY IMPORTANT)
+
+🧠 Rule 1: “Where does this logic belong?”
+Task:	        File:
+API endpoint	routes
+Business logic	controller
+DB operations	model
+External API (ImageKit, etc.)	service
+
+🧠 Rule 2: NEVER do this again ❌
+Don’t write logic in app.js
+Don’t mix everything in one file
+👉 app.js should only:
+use middleware
+connect routes
+
+🧠 Rule 3: When adding NEW FEATURE
+Example: “Like post”
+👉 You create:
+post.controller.js → likePost function
+post.routes.js → /like/:id route
+post.model.js → add likes field
+
+🧠 Rule 4: When fixing bug
+👉 Ask:
+API issue? → routes
+Logic issue? → controller
+DB issue? → model
+Upload/API issue? → service
+
+🧠 Rule 5: Keep controller clean
+👉 Don’t write too long functions
+👉 Break into smaller logic if needed
