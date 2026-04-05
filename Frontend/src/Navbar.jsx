@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <div>
-        <h2>My Photo App</h2>
+        <h2>ShareFrame</h2>
       </div>
       
       <ul>
