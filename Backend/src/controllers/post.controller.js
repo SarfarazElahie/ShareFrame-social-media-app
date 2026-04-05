@@ -1,13 +1,26 @@
 const postModel = require("../models/post.model.js")
 const uploadFile = require("../services/storage.service.js")
+const userModel = require("../models/user.model.js")
 
 const createPost = async(req, res)=>{
     try {
+
+        const { userName, caption } = req.body
+
+        let user = await userModel.findOne({ userName })
+
+         if (!user) {
+            user = await userModel.create({ 
+                userName 
+            })
+        }
+
         const result = await uploadFile(req.file.buffer);
     
         const post = await postModel.create({
             image: result.url,
-            caption: req.body.caption
+            caption: caption,
+            userId : user._id
         })
         
         return res.status(201).json({
@@ -25,7 +38,7 @@ const createPost = async(req, res)=>{
 
 const getPosts = async(req, res)=>{
     try {
-        const posts = await postModel.find()
+        const posts = await postModel.find().populate('userId', 'userName createdAt');
 
         return res.status(200).json({
             message: "Posts fetched succesfully",
