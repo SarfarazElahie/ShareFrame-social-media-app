@@ -325,3 +325,17 @@ Upload/API issue? → service
 🧠 Rule 5: Keep controller clean
 👉 Don’t write too long functions
 👉 Break into smaller logic if needed
+
+5/april/2026
+what data actually get api sends :
+
+{
+  "_id": "post123...",
+  "caption": "My first post",
+  "image": "url...",
+  "userId": {
+    "_id": "user456...",
+    "userName": "JohnDoe",
+    "createdAt": "2023-10-27T10:00:00.000Z" 
+  }
+}
