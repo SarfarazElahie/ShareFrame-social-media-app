@@ -8,7 +8,7 @@ const CreatePost = () => {
     const handleSubmit = async (e)=>{
         e.preventDefault();
         const formData = new FormData(e.target)
-        axios.post("http://localhost:3000/create-post", formData)
+        axios.post("https://shareframe-social-media-app.onrender.com/create-post", formData)
         .then((res)=>{
             console.log(res)
             navigate("/")
