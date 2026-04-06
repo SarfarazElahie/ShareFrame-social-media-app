@@ -4,7 +4,7 @@ A full-stack social media web application built with the MERN stack, where users
 
 > **Live Demo:** (https://share-frame-social-media-app-by-sarfarazelahie-fronte.vercel.app/) &nbsp;|&nbsp; **Backend API:** [shareframe-social-media-app.onrender.com](https://shareframe-social-media-app.onrender.com)
 
----
+--- 
 
 ---
 
