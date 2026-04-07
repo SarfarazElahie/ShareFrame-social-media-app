@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <div>
-        <h2>ShareFrame</h2>
+        <h2><Link to="/">ShareFrame</Link></h2>
       </div>
       
       <ul>

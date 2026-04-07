@@ -95,6 +95,11 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-decoration: none;
+}
+
+.navbar h2 a {
+  text-decoration: none;
 }
 
 /* Animated logo dot */
